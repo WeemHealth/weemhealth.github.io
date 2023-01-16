@@ -1,40 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  <body>
+<section class="hero is-primary is-fullheight" style="background-image: url('assets/images/hero.jpg'); 
+background-size: cover;">
 
-<head>
-  <meta charset="utf-8">
-  <title>{% if page.title %}{{page.title}}{% else %}{{ site.title | escape }}{% endif %}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/png" href="{{ '/images/favicon-32x32.svg' | relative_url }}">
-  <!-- Google Fonts CDN -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Self host font -->
-  <!-- <link rel="preload" href="{{ '/assets/fonts/playfair-display.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin> -->
-  <link href="{{ '/assets/css/style.css' | relative_url }}" rel="stylesheet">
-  
-  {% if page.description %}<meta name="description" content="{{ page.description }}" />{% endif %}
-  {% if page.meta_title %}<meta property="og:title" content="{{ page.meta_title }}"/>{% else %}<meta property="og:title" content="{{ page.title }}"/>{% endif %}
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content="{{ url }}"/>
-  {% if page.image %}<meta property="og:image" content="{{ page.image | absolute_url }}"/>{% endif %}
-  {% if page.description %}<meta property="og:description" content="{{ page.description }}"/>{% endif %}
-  <meta name="twitter:card" content="summary"/>
-  {% if site.data.seo.meta_twitter_site %}<meta name="twitter:site" content="{{ site.seo.meta_twitter_site }}"/>{% endif %}
-  {% if site.data.seo.meta_twitter_creator %}<meta name="twitter:creator" content="{{ site.seo.meta_twitter_creator }}"/>{% endif %}
-
-</head>
-
-<body class='page {{layout.bodyClass}}'>
-  {% include main-menu-mobile.html %}
-  <div id="wrapper" class="wrapper">
-    {% include header.html headerClass='header-extra' %}
-    {{content}}
+  <!-- Hero head: will stick at the top -->
+  <div class="hero-head">
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item">
+            <img src="assets/images/logo.png" alt="Weem Health">
+          </a>
+          <span class="navbar-burger" data-target="navbarMenuHeroA">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenuHeroA" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item is-active">
+              Home
+            </a>
+            <a class="navbar-item">
+              Examples
+            </a>
+            <a class="navbar-item">
+              Documentation
+            </a>
+            <span class="navbar-item">
+              <a class="button is-primary is-inverted">
+                <span class="icon">
+                  <i class="fab fa-phone"></i>
+                </span>
+                <span>Talk to a Coach</span>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </nav>
   </div>
-  {% include footer.html %}
-  {% include sub-footer.html %}
-  <script type="text/javascript" src="{{ '/assets/js/scripts.js' | relative_url }}"></script>
-  {% include google-analytics.html %}
-</body>
+
+  <!-- Hero content: will be in the middle -->
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <p class="title">
+        Title
+      </p>
+      <p class="subtitle">
+        Subtitle
+      </p>
+    </div>
+  </div>
+
+</section>
+  </body>
 </html>

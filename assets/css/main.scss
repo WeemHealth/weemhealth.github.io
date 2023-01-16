@@ -1,0 +1,10 @@
+---
+---
+
+@charset "utf-8";
+$primary: rgb(220, 2, 2);
+@import "bulma/bulma.sass";
+
+body {
+    color: $primary;
+  }
